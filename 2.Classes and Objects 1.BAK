@@ -1,0 +1,80 @@
+//Program to create a class employ
+
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+class employ
+{
+  unsigned int empno;
+  char empname[20];
+  char desig[15];
+  int deptno;
+  char deptname[20];
+  float sal;
+  float comm;
+
+  public:
+
+  float calcom()
+    {
+	   float r;
+	  if(sal>100000)
+	      r=0.2*sal;
+     else if(sal>50000)
+	      r=0.15*sal;
+     else if(sal>25000)
+	      r=0.1*sal;
+     else
+	      r=0.05*sal;
+
+      return r;
+      }
+
+ void accept()
+ {
+   cout<<"\nEnter the Employee number: ";
+   cin>>empno;
+   cout<<"\nEnter the Employee Name: ";
+   gets(empname);
+   cout<<"\nEnter the Department number: ";
+   cin>>deptno;
+   cout<<"\nEnter the Department Name: ";
+   gets(deptname);
+   cout<<"\nEnter the Salary: ";
+   cin>>sal;
+   comm=calcom();
+   cout<<comm;
+
+  }
+
+void disp()
+{
+   cout<<"\nEmployee number: "<<empno;
+   cout<<"\nEmployee Name: ";
+   puts(empname);
+   cout<<"\nDepartment number: "<<deptno;
+   cout<<"\nDepartment Name: ";
+   puts(deptname);
+   cout<<"\nSalary: "<<sal;
+   cout<<"\nCommission: "<<comm;
+
+  }
+
+  };
+
+  void main()
+  {
+   clrscr();
+   cout<<"\n\t Entering Employee Details..... \n\n";
+   employ e;
+   e.accept();
+   clrscr();
+   cout<<"\t\t Displaying Employee Details.... \n\n";
+   e.disp();
+
+      }
+
+
+
+

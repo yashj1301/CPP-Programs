@@ -1,0 +1,111 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<string.h>
+
+class person
+{
+   char pname[20];
+   protected: int age;
+   public: void accept()
+	   {
+	     cout<<"Enter the name of person: ";
+	     gets(pname);
+	     cout<<"\nEnter the age of the person: ";
+	     cin>>age;
+	     }
+
+	    void display()
+	    {
+	     cout<<"Name of the Person: ";
+	     puts(pname);
+	     cout<<"\nAge of the Person: "<<age;
+	     }
+
+	 };
+
+  class address:public person
+  {
+    int houseno;
+    char city[10];
+
+    public:  void ac()
+	     {
+	       cout<<"Enter the house no: ";
+	       cin>>houseno;
+	       cout<<"\nEnter the city: ";
+	       gets(city);
+	       }
+
+	     void disp()
+	     {
+	       cout<<"\nHouse No: "<<houseno;
+	       cout<<"\nCity: "<<city;
+
+	       }
+
+	  };
+
+  class employee:protected address
+  {
+    int empcode;
+    int deptno;
+    float sal;
+    float comm;
+
+    public: void input()
+	    {
+	      accept();
+	      cout<<"\n";
+	      ac();
+
+	      cout<<"\nEnter the Employee Code: ";
+	      cin>>empcode;
+	      cout<<"\nEnter the Department no: ";
+	      cin>>deptno;
+	      cout<<"\nEnter the Salary: ";
+	      cin>>sal;
+
+	      }
+
+	      void calc()
+	      {
+	       if(deptno==1)
+	       comm=0.2*sal;
+
+	       else if(deptno==2)
+	       comm=0.3*sal;
+
+	       else
+	       comm=0.4*sal;
+
+	       }
+
+	      void show()
+	      {
+		display();
+		cout<<"\n";
+		disp();
+
+		cout<<"\nEmployee Code: "<<empcode;
+		cout<<"\nDepartment No: "<<deptno;
+		cout<<"\nSalary: "<<sal;
+		cout<<"\nCommission: "<<comm;
+
+		}
+
+	   };
+
+      void main()
+      {
+       clrscr();
+       employee e1;
+       cout<<"\n\n\t Entering Record....\n\n";
+       e1.input();
+       e1.calc();
+       clrscr();
+       cout<<"\n\n\t Showing Record....\n\n";
+       e1.show();
+
+       }
+

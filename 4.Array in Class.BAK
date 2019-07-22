@@ -1,0 +1,108 @@
+//program to illustrate array within a class
+
+#include<iostream.h>
+#include<stdlib.h>
+#include<conio.h>
+
+class item
+{
+ int icode[5];
+ float price[5];
+
+ public:
+
+ void initial()
+ {
+  for(int i=0;i<5;i++)
+  {
+   cout<<"\n For Item No. "<<i+1;
+   cout<<"\n Item Code: ";
+   cin>>icode[i];
+   cout<<"\n Item Price: ";
+   cin>>price[i];
+   cout<<"\n";
+   }
+  }
+
+  void large()
+  {
+   float lar=price[0];
+   int it=0;
+   for(int i=0;i<5;i++)
+   {
+    if(lar<price[i])
+     {
+      lar=price[i];
+      it=icode[i];
+      }
+    }
+
+   cout<<"Largest Price: "<<lar;
+   cout<<"\n Item Code: "<<it;
+   }
+
+  void sum()
+  {
+   float sum=0;
+   for(int i=0;i<5;i++)
+   {
+    sum+=price[i];
+    }
+
+    cout<<"Sum of prices: "<<sum;
+
+    }
+
+  void disp()
+  {
+    for(int i=0;i<5;i++)
+  {
+   cout<<"\n For Item No. "<<i+1;
+   cout<<"\n Item Code: "<<icode[i];
+   cout<<"\n Item Price: "<<price[i];
+   cout<<"\n";
+   }
+  }
+
+  };
+
+  void main()
+  {
+   clrscr();
+   int c;
+   item i;
+   i.initial();
+   clrscr();
+
+ do
+ {
+   cout<<"\n\t MAIN MENU \n\n";
+   cout<<"\t 1.Display largest Price";
+   cout<<"\n 2.Display Sum of Price";
+   cout<<"\n 3.Display all items";
+   cout<<"\n\n Enter your choice: ";
+   cin>>c;
+
+   switch(c)
+   {
+    case 1: 
+	    i.large();
+	    break;
+
+    case 2: 
+	    i.sum();
+	    break;
+
+   case 3: 	   i.disp();
+	   break;
+
+   default: cout<<"Wrong choice";
+	      break;
+
+    }
+
+    }while(c!=4);
+
+    }
+
+

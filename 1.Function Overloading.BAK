@@ -1,0 +1,80 @@
+//Program to illustrate the concept of function overloading
+
+#include<iostream.h>
+#include<conio.h>
+
+void area(int l,int b);
+void area(int l,int b)
+  {
+    int r;
+    r=l*b;
+    cout<<"area of triangle: "<<r;
+
+  }
+
+void area(int a);
+void area(int a)
+  {
+    int p;
+    p=a*a;
+    cout<<"area of square: "<<p;
+
+  }
+
+void area(int x,float y);
+void area(int x,float y)
+  {
+    float s;
+    s=0.5*x*y;
+    cout<<"area of triangle: "<<s;
+  }
+
+void area(float r);
+void area(float r)
+  {
+    float c;
+    c=3.14*r*r;
+    cout<<"area of circle: "<<c;
+  }
+
+void main()
+{
+  clrscr();
+  int m,l,b,a,x;
+  float y,r;
+ do{
+     cout<<"\n\n AREA CALCULATOR ";
+     cout<<"\n\t 1. Area of Rectangle";
+     cout<<"\n\t 2. Area of Square";
+     cout<<"\n\t 3. Area of Triangle";
+     cout<<"\n\t 4. Area of Circle"<<endl;
+     cout<<"\n Enter your choice: ";
+     cin>>m;
+     cout<<endl;
+ switch(m)
+ {
+  case 1: cout<<"Enter the dimensions of the rectangle: ";
+	  cin>>l>>b;
+	  area(l,b);
+		  break;
+  case 2: cout<<"Enter the side of Square: ";
+	  cin>>a;
+	  area(a);
+		  break;
+  case 3: cout<<"Enter the dimensions of triangle: ";
+	  cin>>x>>y;
+	  area(x,y);
+		  break;
+  case 4: cout<<"Enter the radius of the circle: ";
+	  cin>>r;
+	  area(r);
+		  break;
+		  }
+
+	  }while(m!=5);
+
+	  }
+
+
+
+
